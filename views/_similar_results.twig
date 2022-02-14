@@ -1,0 +1,24 @@
+{% if students is not defined %}
+
+{% elseif students is empty %}
+
+<p class="m-xs text-muted text-center">No similar students</p>
+
+{% else %}
+
+{% for stu in students %}
+  
+  <div class="result-row similar-row {% if loop.index is even %}even-row{% else %}odd-row{% endif %}">
+    <div class='result-cell'>{{ stu.record_id }}</div>
+    <div class='result-cell'>{{ stu.first_name }}</div>
+    <div class='result-cell'>{{ stu.last_name }}</div>
+    <div class='result-cell'>{{ stu.gender }}</div>
+    <div class='result-cell'>{{ stu.age }}</div>
+    <div class="result-cell"><div class="color" style="background-color:{{ stu.background_color }}" data-toggle="tooltip" data-container="body" data-placement="top" title="" data-original-title="{{ stu.favorite_color }}">{{ stu.favorite_color }}</div></div>
+    <div class="result-cell truncated-cell" data-toggle="tooltip" data-container="body" data-placement="top" title="" data-original-title="{{ stu.favorite_movie }}">{{ stu.favorite_movie }}</div>
+    <div class='result-cell empty-cell'></div>
+  </div>
+  
+{% endfor %}
+
+{% endif %}

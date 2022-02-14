@@ -1,0 +1,41 @@
+{% extends "main.twig" %}
+
+{% block content %}
+<div class="centerBox animated fadeInDown">
+  <div class="row">
+  
+    <div class="col-md-12">
+      <div class="ibox-content">
+  
+        <h2 class="font-bold">Student Search</h2>
+  
+        <p>Enter a record ID or name to search for a student.</p>
+        <p>We'll also show you any younger students who have the same favorite color or movie.</p>
+  
+        <div class="row">
+          <div class="col-lg-12">
+            <form class="m-t" role="form" action="javascript:void(0);">
+              
+              <div class="input-group m-b">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input id="search" type="text" placeholder="Search by record ID or name" class="form-control">
+              </div>
+  
+            </form>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div id="results" class="col-lg-12">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/js/index.js"></script>
+{% endblock %}
